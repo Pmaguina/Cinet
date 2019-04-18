@@ -1,0 +1,43 @@
+package com.pe.cinet.api.model;
+
+public class Descuento {
+
+	private int id;
+	private int id_usu;
+	private double monto;
+	private String fecha_vencimiento;
+	private int estado;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getId_usu() {
+		return id_usu;
+	}
+	public void setId_usu(int id_usu) {
+		this.id_usu = id_usu;
+	}
+	public double getMonto() {
+		return monto;
+	}
+	public void setMonto(double monto) {
+		this.monto = monto;
+	}
+	public String getFecha_vencimiento() {
+		return fecha_vencimiento;
+	}
+	public void setFecha_vencimiento(String fecha_vencimiento) {
+		this.fecha_vencimiento = fecha_vencimiento;
+	}
+	public int getEstado() {
+		return estado;
+	}
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+	
+	
+}

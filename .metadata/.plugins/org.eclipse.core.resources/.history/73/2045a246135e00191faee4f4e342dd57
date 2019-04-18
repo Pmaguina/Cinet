@@ -1,0 +1,14 @@
+package com.pe.cinet.api.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.pe.cinet.api.model.Promocion;
+
+public interface PromocionRepository  extends JpaRepository<Promocion, Integer>{
+
+	@Query(value="SELECT p.* FROM Promocion p WHERE p.id_usu_input = :id_usu_input",
+			nativeQuery = true)
+	public Promocion  validarCodigoPromocional(@Param("id_usu_input") int  id_usu_input);
+}

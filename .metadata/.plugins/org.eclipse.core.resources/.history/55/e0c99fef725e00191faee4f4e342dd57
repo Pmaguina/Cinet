@@ -1,0 +1,46 @@
+package com.pe.cinet.api.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.pe.cinet.api.dao.DescuentoDAO;
+import com.pe.cinet.api.model.Descuento;
+import com.pe.cinet.api.model.DescuentoResponse;
+import com.pe.cinet.api.model.ListaDescuento;
+
+@RestController
+@RequestMapping("/cinet")
+public class DescuentoController {
+
+	@Autowired
+	DescuentoDAO descuentoDAO;
+	
+	@GetMapping("/descuento/consultarBonos/{id}")
+	public DescuentoResponse consultarBonos(@PathVariable(value="id") int id) {
+		
+		DescuentoResponse descuento = new DescuentoResponse();
+		
+		List<ListaDescuento> listaDescuento= null;
+		
+		listaDescuento = descuentoDAO.consultarBonos(id);
+		
+		if(listaDescuento!=null) {
+			
+			descuento.setId_usu(id);
+			descuento.setListaDescuento(listaDescuento);
+			descuento.setCodigoRespuesta(0);
+			descuento.setDescripcionRespuesta("Consulta exitosa");
+			
+		}else {
+			descuento.setCodigoRespuesta(-1);
+			descuento.setDescripcionRespuesta("No existe información");
+		}
+		
+		return descuento;
+	}
+}

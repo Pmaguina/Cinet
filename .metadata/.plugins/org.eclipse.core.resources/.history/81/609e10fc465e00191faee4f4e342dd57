@@ -1,0 +1,36 @@
+package com.pe.cinet.api.model;
+
+//import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+@Entity
+@EntityListeners(AuditingEntityListener.class)
+public class PromocionRequest {
+
+	private String codigoPromocional;
+	private int id_usu_input;
+	
+//	private static final long serialVersionUID = 1L;
+
+	public String getCodigoPromocional() {
+		return codigoPromocional;
+	}
+
+	public void setCodigoPromocional(String codigoPromocional) {
+		this.codigoPromocional = codigoPromocional;
+	}
+
+	public int getId_usu_input() {
+		return id_usu_input;
+	}
+
+	public void setId_usu_input(int id_usu_input) {
+		this.id_usu_input = id_usu_input;
+	}
+	
+	
+}

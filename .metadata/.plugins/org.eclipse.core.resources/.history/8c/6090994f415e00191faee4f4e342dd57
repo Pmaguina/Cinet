@@ -1,0 +1,6 @@
+package com.pe.cinet.api.model;
+
+public class Descuento {
+
+	private List<Descuento>
+}

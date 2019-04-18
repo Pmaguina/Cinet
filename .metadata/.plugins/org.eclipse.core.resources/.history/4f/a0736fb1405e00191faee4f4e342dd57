@@ -1,0 +1,6 @@
+package com.pe.cinet.api.repository;
+
+
+public interface DescuentoRepository  {
+
+}

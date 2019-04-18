@@ -1,0 +1,5 @@
+package com.pe.cinet.api.dao;
+
+public class DescuentoDAO {
+
+}

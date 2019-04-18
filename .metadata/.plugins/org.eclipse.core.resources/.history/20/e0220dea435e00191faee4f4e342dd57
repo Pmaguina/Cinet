@@ -1,0 +1,18 @@
+package com.pe.cinet.api.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.pe.cinet.api.model.Descuento;
+import com.pe.cinet.api.repository.DescuentoRepository;
+
+public class DescuentoDAO {
+
+	@Autowired
+	DescuentoRepository  descuentoRepository;
+	
+	/*registrar promocion aplicada*/
+	public Descuento registrarDescuento (Descuento descuento) {
+		return descuentoRepository.save(descuento);
+	}
+	
+}

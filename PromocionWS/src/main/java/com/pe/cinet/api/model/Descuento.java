@@ -1,0 +1,55 @@
+package com.pe.cinet.api.model;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+@Entity
+@Table(name="Descuento")
+@EntityListeners(AuditingEntityListener.class)
+public class Descuento {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	private int id_usu;
+	private double monto;
+	private String fecha_vencimiento;
+	private String estado;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getId_usu() {
+		return id_usu;
+	}
+	public void setId_usu(int id_usu) {
+		this.id_usu = id_usu;
+	}
+	public double getMonto() {
+		return monto;
+	}
+	public void setMonto(double monto) {
+		this.monto = monto;
+	}
+	public String getFecha_vencimiento() {
+		return fecha_vencimiento;
+	}
+	public void setFecha_vencimiento(String fecha_vencimiento) {
+		this.fecha_vencimiento = fecha_vencimiento;
+	}
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+}

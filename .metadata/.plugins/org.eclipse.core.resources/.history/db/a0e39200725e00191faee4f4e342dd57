@@ -1,0 +1,9 @@
+package com.pe.cinet.api.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pe.cinet.api.model.Descuento;
+
+public interface DescuentoRepository extends JpaRepository<Descuento, Integer>{
+
+}

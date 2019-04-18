@@ -1,0 +1,21 @@
+package com.pe.cinet.api.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.pe.cinet.api.model.Descuento;
+
+public interface DescuentoRepository extends JpaRepository<Descuento, Integer>{
+
+	@Query(value="SELECT * FROM Descuento WHERE id_usu = :id_usu",
+			nativeQuery = true)
+	public List<Descuento> consultarBonos(@Param("id_usu") int id_usu);
+	
+	
+	@Query(value="UPDATE Descuento SET estado= estado WHERE id_usu = :id_usu AND fecha_vencimiento = :fecha_vencimiento",
+			nativeQuery = true)
+	public void actualizaEstadoBono(@Param("id_usu") int id_usu,@Param("estado") String estado, @Param("fecha_vencimiento") String fecha_vencimiento);
+}

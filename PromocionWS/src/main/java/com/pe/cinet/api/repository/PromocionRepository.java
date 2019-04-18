@@ -1,0 +1,23 @@
+package com.pe.cinet.api.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.pe.cinet.api.model.Promocion;
+
+public interface PromocionRepository  extends JpaRepository<Promocion, Integer>{
+
+	@Query(value="SELECT p.* FROM Promocion p INNER JOIN Usuario u ON p.id_usu_input = u.id WHERE u.codigo_promocional = :codigo_promocional",
+			nativeQuery = true)
+	public Promocion  validarCodigoPromocionalUtilizado(@Param("codigo_promocional") String  codigo_promocional);
+	
+	@Query(value="SELECT u.id FROM Usuario u WHERE u.codigo_promocional = :codigo_promocional",
+			nativeQuery = true)
+	public int validarCodigoPromocionalUsuario(@Param("codigo_promocional") String  codigo_promocional);
+	
+	@Query(value="UPDATE Usuario u SET cinet_creditos = cinet_creditos + 20 WHERE u.codigo_promocional = :codigo_promocional",
+			nativeQuery = true)
+	public void actualizarCineCredito(@Param("codigo_promocional") String  codigo_promocional);
+	
+}

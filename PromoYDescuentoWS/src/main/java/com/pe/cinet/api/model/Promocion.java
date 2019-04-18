@@ -1,0 +1,49 @@
+package com.pe.cinet.api.model;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+@Entity
+@Table(name="Promocion")
+@EntityListeners(AuditingEntityListener.class)
+public class Promocion {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	private int id_usu_input;
+	private int id_usu_output;
+	private String codigo_promocional;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getId_usu_input() {
+		return id_usu_input;
+	}
+	public void setId_usu_input(int id_usu_input) {
+		this.id_usu_input = id_usu_input;
+	}
+	public int getId_usu_output() {
+		return id_usu_output;
+	}
+	public void setId_usu_output(int id_usu_output) {
+		this.id_usu_output = id_usu_output;
+	}
+	public String getCodigo_promocional() {
+		return codigo_promocional;
+	}
+	public void setCodigo_promocional(String codigo_promocional) {
+		this.codigo_promocional = codigo_promocional;
+	}
+	
+}

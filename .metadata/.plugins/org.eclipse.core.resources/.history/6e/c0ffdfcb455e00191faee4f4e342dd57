@@ -1,0 +1,19 @@
+package com.pe.cinet.api.model;
+
+import java.io.Serializable;
+
+public class PromocionRequest implements Serializable {
+
+	private String codigoPromocional;
+	
+	private static final long serialVersionUID = 1L;
+
+	public String getCodigoPromocional() {
+		return codigoPromocional;
+	}
+
+	public void setCodigoPromocional(String codigoPromocional) {
+		this.codigoPromocional = codigoPromocional;
+	}
+	
+}

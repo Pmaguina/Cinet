@@ -1,0 +1,18 @@
+package com.pe.cinet.api.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.pe.cinet.api.model.Descuento;
+import com.pe.cinet.api.repository.DescuentoRepository;
+
+public class DescuentoDAO {
+
+	@Autowired
+	DescuentoRepository descuentoRepository;
+	
+	/*listar bonos*/
+	
+	public List<ListaDescuento> 
+}
